@@ -2,10 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Budd"
-             x:Class="Budd.MainPage">
+             x:Class="Budd.MainPage" Title="Add your Units">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout Orientation="Vertical">
+        <Entry x:Name="unitCode" Text="unit code"/>
+        <Entry x:Name="unitName" Text="unit name"/>
+        <Entry x:Name="lecturer" Text="unit lecturer"/>
+        <Entry x:Name="lessonNumber" Text="lesson number"/>
+        <Entry x:Name="lectureRoom" Text="lecture room"/>
+        <Label Text="Pick a day and time" HorizontalOptions="CenterAndExpand"  VerticalOptions="Center" FontSize="Large"/>
+        <Grid Padding="5" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Picker SelectedIndex="0" x:Name="dayPicker" Grid.Column="0" Grid.Row="1"/>
+            <TimePicker Grid.Column="1" Grid.Row="1" x:Name="timer"/>
+            <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" x:Name="done" Text="Done" Clicked="done_Clicked"/>
+        </Grid>
+        <Label HorizontalOptions="CenterAndExpand" x:Name="remindMe"/>
+    </StackLayout>
 
 </ContentPage>
