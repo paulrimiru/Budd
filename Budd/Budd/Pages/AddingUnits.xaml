@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Budd"
-             x:Class="Budd.MainPage" Title="Add your Units">
-
+             x:Class="Budd.Pages.AddingUnits" Title="AddUnits">
+    
     <StackLayout Orientation="Vertical">
         <Entry x:Name="unitCode" Text="unit code"/>
         <Entry x:Name="unitName" Text="unit name"/>
@@ -21,11 +20,11 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Picker SelectedIndex="0" x:Name="dayPicker" Grid.Column="0" Grid.Row="1"/>
+            <Picker SelectedIndex="0" x:Name="dayPicker" Grid.Column="0" Grid.Row="1" WidthRequest="100" />
             <TimePicker Grid.Column="1" Grid.Row="1" x:Name="timer"/>
             <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" x:Name="done" Text="Done" Clicked="done_Clicked"/>
         </Grid>
-        <Label HorizontalOptions="CenterAndExpand" x:Name="remindMe"/>
+        <Label HorizontalOptions="CenterAndExpand" x:Name="success"/>
     </StackLayout>
-
+    
 </ContentPage>
