@@ -1,17 +1,20 @@
-﻿using Buddy.Models;
+﻿using Budd.Models;
+using Buddy.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 
-namespace Budd
+namespace Budd.Pages
 {
-    public partial class MainPage : ContentPage
+    public partial class AddingUnits : ContentPage
     {
         public Unit unit = new Unit();
-        public MainPage()
+        List<string> myDays = new List<string>();
+        public AddingUnits()
         {
             InitializeComponent();
             this.Appearing += addMyDays;
@@ -23,14 +26,25 @@ namespace Budd
             unit.lecturer = lecturer.Text;
             unit.lectureRoom = lectureRoom.Text;
             unit.lessonNumber = lessonNumber.Text;
-            var day = Days.getDay()[dayPicker.SelectedIndex];
-            unit.day = day.name;
+            unit.day = myDays[dayPicker.SelectedIndex];
             unit.time = timer.Time.ToString();
+
+            var AddToDb = new SqlConnectorClass();
+            AddToDb.addInfo(unit);
+            success.Text = "Added item";
         }
         private void addMyDays(object sender, EventArgs s)
         {
             dayPicker.Items.Add("Choose a day");
-
+            myDays.Add("Monday");
+            myDays.Add("Tuesday");
+            myDays.Add("Wednesday");
+            myDays.Add("Thursday");
+            myDays.Add("Friday");
+            foreach (var days in myDays)
+            {
+                dayPicker.Items.Add(days);
+            }
         }
 
     }
