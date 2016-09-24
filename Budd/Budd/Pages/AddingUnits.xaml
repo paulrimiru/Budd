@@ -4,11 +4,11 @@
              x:Class="Budd.Pages.AddingUnits" Title="AddUnits">
     
     <StackLayout Orientation="Vertical">
-        <Entry x:Name="unitCode" Text="unit code"/>
-        <Entry x:Name="unitName" Text="unit name"/>
-        <Entry x:Name="lecturer" Text="unit lecturer"/>
-        <Entry x:Name="lessonNumber" Text="lesson number"/>
-        <Entry x:Name="lectureRoom" Text="lecture room"/>
+        <Entry x:Name="unitCode" Placeholder="unit code"/>
+        <Entry x:Name="unitName" Placeholder="unit name"/>
+        <Entry x:Name="lecturer" Placeholder="unit lecturer"/>
+        <Entry x:Name="lessonNumber" Placeholder="lesson number"/>
+        <Entry x:Name="lectureRoom" Placeholder="lecture room"/>
         <Label Text="Pick a day and time" HorizontalOptions="CenterAndExpand"  VerticalOptions="Center" FontSize="Large"/>
         <Grid Padding="5" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
             <Grid.ColumnDefinitions>

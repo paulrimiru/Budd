@@ -21,9 +21,13 @@ namespace Budd.Pages
         private void UnitsList_Appearing(object sender, EventArgs e)
         {
             var connection = new SqlConnectorClass().myConnection;
-            unitsList.ItemsSource = connection.Table<Unit>();
+            unitsList.BindingContext = connection.Table<Unit>();
         }
 
-
+        private async void unitsList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var unitInfo = e.Item as Unit;
+            await Navigation.PushAsync(new UnitsPage(unitInfo.name, unitInfo.code, unitInfo.lecturer));
+        }
     }
 }

@@ -19,7 +19,8 @@ namespace XamarinForms.SQLite.Windows.SQLite
         public SQLiteConnection GetConnection()
         {
             var sqliteFilename = "MySQLiteDB.db3";
-            string documentsPath = ApplicationData.Current.LocalFolder.Path;
+            //string documentsPath = ApplicationData.Current.LocalFolder.Path;
+            string documentsPath = "C:\\Users\\Mike\\Documents\\";
             var path = Path.Combine(documentsPath, sqliteFilename);
             // Create the connection
             var conn = new SQLiteConnection(path);

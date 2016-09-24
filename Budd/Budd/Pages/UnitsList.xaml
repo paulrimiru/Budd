@@ -5,6 +5,18 @@
     <StackLayout>
         <Label x:Name="df"></Label>
 
-        <ListView x:Name="unitsList" HasUnevenRows="true" IsPullToRefreshEnabled="True"/>
+        <ListView x:Name="unitsList" HasUnevenRows="true" ItemsSource="{Binding}" IsPullToRefreshEnabled="True" ItemTapped="unitsList_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" >
+                            <Label FontSize="Large" Text="{Binding name}" HorizontalOptions="Center"/>
+                            <Label FontSize="Medium" Text="{Binding lecturer}" HorizontalOptions="Center"/>
+                            <Label FontSize="Small" Text="{Binding day}" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>

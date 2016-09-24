@@ -13,7 +13,7 @@ namespace Budd
         {
             InitializeComponent();
 
-            MainPage = new Budd.Pages.Tabbs();
+            MainPage = new NavigationPage(new Pages.Tabbs());
         }
 
         protected override void OnStart()

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Budd.Pages.UnitsPage">
+    <StackLayout Orientation="Vertical">
+        <Grid HorizontalOptions="CenterAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+        <Label Text="Name:" FontSize="24" Grid.Row="0" Grid.Column="0"/>
+        <Label Text="Code:" FontSize="22" Grid.Row="1" Grid.Column="0"/>
+        <Label Text="Lecturer" FontSize="20" Grid.Row="2" Grid.Column="0"/>
+
+            <Label x:Name="course" FontSize="24" Grid.Row="0" Grid.Column="1"/>
+            <Label x:Name="code" FontSize="22" Grid.Row="1" Grid.Column="1"/>
+            <Label x:Name="lecturer1" FontSize="22" Grid.Row="2" Grid.Column="1"/>
+        </Grid>
+        <Label Text="Course Activities" FontSize="Large" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+        <Entry x:Name="activity" HorizontalOptions="CenterAndExpand" Placeholder="Enter an activity"/>
+        <ListView x:Name="activityList" HorizontalOptions="Center" Header="Activities"/>
+    </StackLayout>
+</ContentPage>

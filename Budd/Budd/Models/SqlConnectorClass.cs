@@ -37,5 +37,23 @@ namespace Budd.Models
         {
             return myConnection;
         }
+
+        public List<Unit> getMyUnits()
+        {
+            List<Unit> myUnitList = new List<Unit>();
+            foreach(var myUnit in myConnection.Table<Unit>())
+            {
+                myUnitList.Add(new Unit {
+                    code = myUnit.code,
+                    name = myUnit.name,
+                    lecturer = myUnit.lecturer,
+                    lessonNumber = myUnit.lessonNumber,
+                    lectureRoom = myUnit.lectureRoom,
+                    day = myUnit.day,
+                    time = myUnit.time
+                });
+            }
+            return myUnitList;
+        } 
     }
 }
