@@ -23,6 +23,18 @@
         </Grid>
         <Label Text="Course Activities" FontSize="Large" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
         <Entry x:Name="activity" HorizontalOptions="CenterAndExpand" Placeholder="Enter an activity"/>
-        <ListView x:Name="activityList" HorizontalOptions="Center" Header="Activities"/>
+        <Entry x:Name="deadline" HorizontalOptions="CenterAndExpand" Placeholder="Enter an activity deadline day"/>
+        <ListView x:Name="activityList" HorizontalOptions="Center" Header="Activities">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Viewcell>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding name}" FontSize="18"/>
+                            <Label Text="{Binding time}" FontSize="14"/>
+                        </StackLayout>
+                    </Viewcell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>
