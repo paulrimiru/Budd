@@ -23,16 +23,17 @@
         </Grid>
         <Label Text="Course Activities" FontSize="Large" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
         <Entry x:Name="activity" HorizontalOptions="CenterAndExpand" Placeholder="Enter an activity"/>
-        <Entry x:Name="deadline" HorizontalOptions="CenterAndExpand" Placeholder="Enter an activity deadline day"/>
-        <ListView x:Name="activityList" HorizontalOptions="Center" Header="Activities">
+        <DatePicker x:Name="deadline" HorizontalOptions="Center"/>
+        <Button x:Name="addbutton" HorizontalOptions="Center" Text="Add Activity" Clicked="addbutton_Clicked"/>
+        <ListView x:Name="activityList" HorizontalOptions="Center" Header="Activities" ItemsSource="{Binding}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Viewcell>
+                    <ViewCell>
                         <StackLayout Orientation="Vertical">
                             <Label Text="{Binding name}" FontSize="18"/>
                             <Label Text="{Binding time}" FontSize="14"/>
                         </StackLayout>
-                    </Viewcell>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

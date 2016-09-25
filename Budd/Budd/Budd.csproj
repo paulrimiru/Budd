@@ -39,6 +39,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\UnitsActivities.cs" />
+    <Compile Include="Models\UnitsActivitiesSql.cs" />
     <Compile Include="Pages\AddingUnits.xaml.cs">
       <DependentUpon>AddingUnits.xaml</DependentUpon>
     </Compile>

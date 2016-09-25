@@ -8,6 +8,7 @@ namespace Budd.Models
 {
     public class UnitsActivities
     {
+        public string unitName { get; set; }
         public string name { get; set; }
         public string time { get; set; }
     }

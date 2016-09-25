@@ -29,5 +29,11 @@ namespace Budd.Pages
             var unitInfo = e.Item as Unit;
             await Navigation.PushAsync(new UnitsPage(unitInfo.name, unitInfo.code, unitInfo.lecturer));
         }
+
+        private void refresh_Clicked(object sender, EventArgs e)
+        {
+            var connection = new SqlConnectorClass().myConnection;
+            unitsList.BindingContext = connection.Table<Unit>();
+        }
     }
 }
